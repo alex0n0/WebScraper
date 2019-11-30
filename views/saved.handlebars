@@ -1,0 +1,214 @@
+<style>
+    #article-container {
+        height: calc(100% - 60%);
+    }
+
+    @media (min-width: 768px) {
+        #article-container {
+            height: calc(100%);
+        }
+    }
+
+    #notes-container {
+        height: calc(100% - 40%);
+    }
+
+    @media (min-width: 768px) {
+        #notes-container {
+            height: calc(100%);
+        }
+    }
+</style>
+
+<div class="overflow-hack">
+    {{!-- <header>
+        <div class="container h-100 d-flex align-items-center">
+            <a class="mr-3" href="./index.html">
+                <h3 class="text-nowrap">subreddit scraper</h3>
+            </a>
+            <a class="text-nowrap" href="./saved.html">Saved Articles</a>
+        </div>
+    </header> --}}
+    {{> header}}
+    <main>
+        <div class="container h-100">
+            <div class="row h-100">
+
+
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ARTICLE LIST -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <div class="col-12 col-md-7 pb-0 pb-md-3" id="article-container">
+                    <div class="d-flex flex-column bg-white pb-3 h-100">
+                        <div class="d-flex py-2 px-3 flex-shrink-0 flex-grow-0 border-bottom">
+                            <div class="flex-grow-1 flex-shrink-1">
+                                Details
+                            </div>
+                            <div style="flex: 0 0 110px;">
+                                <p class="text-center mb-0">Action</p>
+                            </div>
+                        </div>
+
+
+                        <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                        <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                        <!-- ARTICLE LIST - SAVED ARTICLES-->
+                        <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                        <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                        <div id="savedArticles" class="flex-shrink-1 flex-grow-1 px-3 h-100" style="overflow-y: auto;">
+                            <p id="labelSavedArticlesDefault" class="m-0 my-3 text-center text-muted">Save some articles</p>
+                            
+                            {{!-- <div class="d-flex border-bottom py-2">
+                                <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col-12 col-xl-8">
+                                                <p class="mb-0 text-muted">r/webdev</p>
+                                                <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                            </div>
+                                            <div class="col-12 col-xl-4">
+                                                <p class="mb-0 text-muted">u/anon</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="flex: 0 0 75px;">
+                                        <a href="https://www.reddit.com/r/webdev/" target="_blank">open</a>
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex align-items-center mr-3" style="flex: 0 0 10px;">
+                                    <div class="dropdown">
+                                        <button class="btn d-flex align-items-center px-0" id="dropdownMenuButton"
+                                            data-toggle="dropdown">
+                                            <i class="material-icons" style="font-size: 1.35rem;">more_vert</i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <button class="dropdown-item">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-block btn-primary d-flex align-items-center px-2">
+                                        <i class="material-icons" style="font-size: 1.35rem;">speaker_notes</i>
+                                    </button>
+                                </div>
+                            </div> --}}
+                          
+                            <!-- <p class="m-0 py-3 border-bottom">asdf</p>
+                                <p class="m-0 py-3 border-bottom">asdf</p>
+                                <p class="m-0 py-3 border-bottom">asdf</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- NOTES LIST -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <!-- ###################################### -->
+                <div class="col-12 col-md-5 pt-3 pt-md-0 d-none" id="notes-container">
+                    <div class="d-none h-100 pb-3">
+                        <p class="m-0 my-3 text-center text-muted">View article notes</p>
+                    </div>
+                    <div class="d-none d-flex flex-column h-100 pb-3">
+                        <button class="btn btn-success d-flex align-items-center px-2 ml-auto mr-3 mb-3 buttonCreateNote"
+                            data-toggle="modal" data-target="#note-modal">
+                            <i class="material-icons">add</i>
+                        </button>
+
+                        <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                        <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                        <!-- NOTES LIST - ARTICLE NOTES-->
+                        <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                        <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                        <div id="notesList" class="flex-grow-1 flex-shrink-1" style="overflow-y: auto;">
+                            {{!-- <p class="m-0 my-3 text-center text-muted">Add some notes</p> --}}
+                            {{!-- <div class="border p-3 mb-3">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="pt-2">Note 1</h6>
+                                        <p class="mb-0">This is the first note Lorem ipsum, dolor sit amet
+                                            consectetur
+                                            adipisicing elit. Sint eius, suscipit corporis, aliquid modi,
+                                            perspiciatis
+                                            doloremque error eaque dignissimos minima neque excepturi. Mollitia, ea!
+                                            Itaque
+                                            voluptas labore aperiam sint vel.</p>
+                                    </div>
+                                    <div class="col flex-grow-0 flex-shrink-0 d-flex align-items-start flex-nowrap">
+                                        <div class="dropdown mr-2">
+                                            <button class="btn d-flex align-items-center px-0" id="dropdownMenuButton"
+                                                data-toggle="dropdown">
+                                                <i class="material-icons" style="font-size: 1.35rem;">more_vert</i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Delete</a>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-warning px-2 d-flex align-items-center"
+                                            data-toggle="modal" data-target="#note-modal">
+                                            <i class="material-icons" style="font-size: 1.35rem;">edit</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> --}}
+
+                            <!-- <p class="m-0 py-3 border-bottom">asdf</p>
+                                <p class="m-0 py-3 border-bottom">asdf</p>
+                                <p class="m-0 py-3 border-bottom">asdf</p> -->
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="note-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <h5 id="labelCreateNote" class="m-0 d-none">Create a Note</h5>
+                <h5 id="labelEditNote" class="m-0 d-none">Edit a Note</h5>
+            </div>
+            <div class="modal-body py-0">
+                <input id="noteTitle" type="text" class="form-control mb-3" placeholder="Title">
+                <textarea id="noteBody" type="text" class="form-control" rows="5" placeholder="Body"></textarea>
+            </div>
+            <div class="modal-footer border-0">
+                <button class="btn btn-secondary m-0 mr-3" data-dismiss="modal">Cancel</button>
+                <button id="buttonSaveNoteCreate" class="btn btn-success m-0 d-none">Save</button>
+                <button id="buttonSaveNoteEdit" class="btn btn-success m-0 d-none">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="js/saved.js"></script>

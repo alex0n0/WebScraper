@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="overflow-hack">
+        <header>
+            <div class="container h-100 d-flex align-items-center">
+                <a class="mr-3" href="./index.html">
+                    <h3 class="text-nowrap">subreddit scraper</h3>
+                </a>
+                <a class="text-nowrap" href="./saved.html">Saved Articles</a>
+            </div>
+        </header>
+        <main>
+            <div class="container h-100">
+                <div class="row h-100">
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- SIDEBAR (LEFT) -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <label for="">Current Articles: <b>r/webdev</b></label>
+                        <div class="d-flex flex-row flex-md-column align-items-start">
+                            <div class="mr-3 mr-md-0 flex-grow-1 flex-shrink-1">
+                                <select name="" id="" class="form-control mb-1">
+                                    <option value="">r/webdev</option>
+                                    <option value="">r/programming</option>
+                                    <option value="">r/react</option>
+                                </select>
+                                <p class="small text-muted">Last Scraped: 15 Dec 2019 at 11:30:00</p>
+                            </div>
+                            <button class="btn btn-primary">SCRAPE</button>
+                        </div>
+                    </div>
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ARTICLE LIST -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <div class="col-12 col-md-8 col-lg-6 pb-3" id="article-container">
+                        <div class="d-flex flex-column bg-white pb-3 h-100">
+                            <div class="d-flex py-2 px-3 flex-shrink-0 flex-grow-0 border-bottom">
+                                <div class="flex-grow-1 flex-shrink-1">
+                                    Details
+                                </div>
+                                <div style="flex: 0 0 105px;">
+                                    <p class="text-center mb-0">Action</p>
+                                </div>
+                            </div>
+
+
+                            <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                            <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                            <!-- ARTICLE LIST - SCRAPED ARTICLES-->
+                            <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                            <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                            <div class="flex-shrink-1 flex-grow-1 px-3 h-100" style="overflow-y: auto;">
+                                <p class="m-0 my-3 text-center text-muted">Scrape some data</p>
+
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="flex-grow-1 flex-shrink-1 row align-items-start">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col-12 col-md-8">
+                                                    <p class="mb-0"><b>MEAN Stack MERN stack LAMP stack</b></p>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <p class="mb-0 text-muted">u/anon</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 0 0 75px;"><a href="https://www.reddit.com/r/webdev/"
+                                                target="_blank">open</a></div>
+                                    </div>
+                                    <div class="d-flex align-items-center" style="flex: 0 0 75px;">
+                                        <button class="btn btn-block btn-success">SAVE</button>
+                                    </div>
+                                </div>
+
+                                <!-- <p class="py-3 border-bottom">asdf</p>
+                                <p class="py-3 border-bottom">asdf</p>
+                                <p class="py-3 border-bottom">asdf</p> -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- SIDEBAR (RIGHT) -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <!-- ###################################### -->
+                    <div class="d-none d-lg-block col-3 h-100">
+                        <div class="d-flex flex-column pb-3 h-100">
+                            <h5 class="flex-shrink-0 flex-grow-0">Latest Saved Articles</h5>
+
+                            <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                            <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                            <!-- SIDEBAR (RIGHT) - SAVED ARTICLES-->
+                            <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                            <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                            <div class="pr-2 flex-shrink-1" style="overflow-y: auto;">
+                                <p class="m-0 my-3 text-center text-muted">Save some articles</p>
+
+                                <div class="mb-2 border py-1 px-2">
+                                    <p class="small text-muted mb-0">r/webdev</p>
+                                    <div class="d-flex">
+                                        <p class="mb-0 mr-auto">MEAN Stack</p>
+                                        <a href="https://www.reddit.com/r/webdev/"
+                                        target="_blank">open</a>
+                                    </div>
+                                </div>
+                                <div class="mb-2 border py-1 px-2">
+                                    <p class="small text-muted mb-0">r/webdev</p>
+                                    <div class="d-flex">
+                                        <p class="mb-0 mr-auto">MEAN Stack</p>
+                                        <a href="https://www.reddit.com/r/webdev/"
+                                        target="_blank">open</a>
+                                    </div>
+                                </div>
+                                <div class="mb-2 border py-1 px-2">
+                                    <p class="small text-muted mb-0">r/webdev</p>
+                                    <div class="d-flex">
+                                        <p class="mb-0 mr-auto">MEAN Stack</p>
+                                        <a href="https://www.reddit.com/r/webdev/"
+                                        target="_blank">open</a>
+                                    </div>
+                                </div>
+                                <div class="mb-2 border py-1 px-2">
+                                    <p class="small text-muted mb-0">r/webdev</p>
+                                    <div class="d-flex">
+                                        <p class="mb-0 mr-auto">MEAN Stack</p>
+                                        <a href="https://www.reddit.com/r/webdev/"
+                                        target="_blank">open</a>
+                                    </div>
+                                </div>
+                                <div class="mb-2 border py-1 px-2">
+                                    <p class="small text-muted mb-0">r/webdev</p>
+                                    <div class="d-flex">
+                                        <p class="mb-0 mr-auto">MEAN Stack</p>
+                                        <a href="https://www.reddit.com/r/webdev/"
+                                        target="_blank">open</a>
+                                    </div>
+                                </div>
+                               
+                                <!-- <p class="mb-2 border py-1 px-2">asdf</p>
+                                <p class="mb-2 border py-1 px-2">asdf</p>
+                                <p class="mb-2 border py-1 px-2">asdf</p> -->
+                            </div>
+                            <a class="flex-shrink-0 flex-grow-0 pt-2" href="./saved.html">See more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
