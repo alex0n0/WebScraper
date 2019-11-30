@@ -138,11 +138,20 @@ $('#buttonSaveNoteEdit').on('click', function () {
         if (currentArticle && currentNote) {
             let currentArticleIndex = arrSavedArticles.indexOf(currentArticle);
             let currentNoteIndex = arrSavedArticles[currentArticleIndex].notes.indexOf(currentNote);
-
-            arrSavedArticles[currentArticleIndex].notes[currentNoteIndex] = {
+            let noteObj = {
                 title: title,
                 body: body
             }
+  
+            $.ajax({
+                type: 'put',
+                url: '/api/saved/note/update/' + currentArticleIndex + '/' + currentNoteIndex,
+                data: noteObj
+            }).then(data => {
+
+            });
+
+            arrSavedArticles[currentArticleIndex].notes[currentNoteIndex] = noteObj;
             $('#note-modal').modal('hide');
             currentNote = undefined;
 

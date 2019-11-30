@@ -148,6 +148,12 @@ app.post('/api/saved/note/create/:articleid', function (req, res) {
         arrSavedArticles: arrSavedArticles
     });
 });
+app.put('/api/saved/note/update/:articleid/:noteid', function (req, res) {
+    arrSavedArticles[req.params.articleid].notes[req.params.noteid] = req.body;
+    res.json({
+        arrSavedArticles: arrSavedArticles
+    });
+});
 
 /**
  * render route -> give the page
