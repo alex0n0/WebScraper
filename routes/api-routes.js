@@ -172,7 +172,7 @@ module.exports = function (app) {
         db.Notes.findOneAndUpdate({ _id: req.params.noteid }, note)
             .then(function (dbNote) {
                 res.json({
-                    arrSavedArticles: arrSavedArticles
+                    status: 'success'
                 });
             })
             .catch(function (err) {

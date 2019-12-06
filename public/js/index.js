@@ -11,7 +11,7 @@ $(document).ready(function () {
         type: 'get',
         url: '/api/index'
     }).then(data => {
-        console.log(data);
+        // console.log(data);
 
         arrTempArticles = data.arrTempArticles;
         arrSavedArticles = data.arrSavedArticles;
