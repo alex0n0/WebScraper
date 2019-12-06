@@ -1,5 +1,5 @@
 module.exports = {
-    Articles: require("./article"),
-    Notes: require("./note")
+    Articles: require("./Article.js"),
+    Notes: require("./Note.js")
   };
   
