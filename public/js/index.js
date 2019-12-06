@@ -103,7 +103,7 @@ function renderScrapedArticles(arrArticles, target) {
                 url: '/api/index/save',
                 data: articleData
             }).then(data => {
-                arrSavedArticles = data.arrSavedArticles;
+                arrSavedArticles.push(data.savedArticle);
                 if (arrSavedArticles.length !== 0) {
                     renderSavedArticles(arrSavedArticles, $('#savedArticles'));
                     renderScrapedArticles(arrTempArticles, $('#scrapedArticles'));

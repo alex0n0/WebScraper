@@ -26,7 +26,7 @@ function renderSavedArticles(arrArticles, target) {
                     <div class="col">
                         <div class="row">
                             <div class="col-12 col-xl-8">
-                                <p class="mb-0 text-muted">r/webdev</p>
+                                <p class="mb-0 text-muted">${curr.articleCategory}</p>
                                 <p class="mb-0"><b>${curr.title}</b></p>
                             </div>
                             <div class="col-12 col-xl-4">
@@ -65,17 +65,18 @@ function renderSavedArticles(arrArticles, target) {
             $('#notes-container').addClass('d-none');
             $.ajax({
                 type: 'delete',
-                url: '/api/saved/article/delete/' + i
+                url: '/api/saved/article/delete/' + curr._id
             }).then(data => {
                 $('#savedArticles').empty();
                 $('#notesList').empty();
-                arrSavedArticles = data.arrSavedArticles;
+                arrSavedArticles.splice(i, 1);
                 if (arrSavedArticles.length !== 0) {
                     renderSavedArticles(arrSavedArticles, $('#savedArticles'));
                 } else {
                     $('#savedArticles').append(`<p id="labelSavedArticlesDefault" class="m-0 my-3 text-center text-muted">Save some articles</p>`);
                 }
             });
+
         });
 
         row.find('.buttonViewNotes').on('click', function () {
@@ -114,8 +115,9 @@ $('#buttonSaveNoteCreate').on('click', function () {
             $('#buttonSaveNoteCreate').attr('disabled', true);
             let currentArticleIndex = arrSavedArticles.indexOf(currentArticle);
             let noteObj = {
+                _id: currentArticle._id,
                 title: title,
-                body: body
+                body: body,
             }
             $.ajax({
                 type: 'post',
@@ -123,10 +125,10 @@ $('#buttonSaveNoteCreate').on('click', function () {
                 data: noteObj
             }).then(data => {
                 $('#buttonSaveNoteCreate').attr('disabled', false);
+                arrSavedArticles[currentArticleIndex].notes.push(noteObj);
+                renderArticlesNotes(arrSavedArticles[currentArticleIndex].notes, $('#notesList'));
             });
-            arrSavedArticles[currentArticleIndex].notes.push(noteObj);
             $('#note-modal').modal('hide');
-            renderArticlesNotes(arrSavedArticles[currentArticleIndex].notes, $('#notesList'))
         }
     }
 });
@@ -142,10 +144,11 @@ $('#buttonSaveNoteEdit').on('click', function () {
                 title: title,
                 body: body
             }
-  
+            console.log(currentArticle._id, currentNote._id);
+
             $.ajax({
                 type: 'put',
-                url: '/api/saved/note/update/' + currentArticleIndex + '/' + currentNoteIndex,
+                url: '/api/saved/note/update/' + currentArticle._id + '/' + currentNote._id,
                 data: noteObj
             }).then(data => {
 
@@ -199,6 +202,12 @@ function renderArticlesNotes(arrNotes, target) {
                 currentNote = curr;
             });
             noteRow.find('.buttonDeleteNote').on('click', function () {
+                $.ajax({
+                    type: 'delete',
+                    url: '/api/saved/note/delete/' + currentArticle._id + '/' + curr._id
+                }).then(function(data) {
+
+                });
                 arr.splice(i, 1);
                 renderArticlesNotes(arr, $('#notesList'));
             });
